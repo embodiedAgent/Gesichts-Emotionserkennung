@@ -26,7 +26,9 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Binde den Socket an eine Adresse und einen Port
 host = socket.gethostname()
-server_address = (host, 5000)
+#server_address = (host, 5000)
+server_address = ("127.0.0.1", 5000)
+
 print('Verbinde zu {} port {}'.format(*server_address))
 sock.connect(server_address)
 
@@ -287,7 +289,8 @@ def analysis(db_path, model_name = 'VGG-Face', detector_backend = 'opencv', dist
 					
 
 							mood_items = []
-							textfile = open("/home/benny/Dokumente/HSKA/Wahrnehmungsbasierte Interaktion/emotionlist.txt", "a")
+							#textfile = open("/home/benny/Dokumente/HSKA/Wahrnehmungsbasierte Interaktion/emotionlist.txt", "a")
+							textfile = open(db_path + "/emotionlist.txt", "a")
 							for i in range(0, len(emotion_labels)):
 								mood_item = []
 								emotion_label = emotion_labels[i]

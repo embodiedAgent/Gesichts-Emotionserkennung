@@ -5,9 +5,12 @@ host = socket.gethostname()
 port = 5000
 # Erstelle einen Socket für den Server
 server_socket = socket.socket()
+print("socket object created!")
 
 # Binde den Socket an eine Adresse und einen Port
-server_socket.bind((host, port))
+#server_socket.bind((host, port))
+server_socket.bind(("127.0.0.1", port))
+print("socket bind to an address and port!")
 
 # Beginne das Abhören von Verbindungen
 server_socket.listen()
@@ -22,14 +25,10 @@ while True:
     data = client_socket.recv(1024)
     print('Daten empfangen: ', data)
     
-    
-        
-    
     if(data != b''):
         jsonFormat = json.loads(data)
         name = jsonFormat['name']
         print('name ist' , name)
-        
         
         if(name != 'unknown'):
             
@@ -42,13 +41,6 @@ while True:
             persons_name = str.encode(val)
             
             client_socket.send(persons_name)
-            
-    
-    
-    
-    
-    
-    
 
             
 
