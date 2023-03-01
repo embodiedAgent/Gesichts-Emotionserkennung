@@ -31,3 +31,7 @@ Installation path of deepface:
 ```
 /Users/{current user}/opt/anaconda3/lib/python3.9/site-packages/deepface/
 ```
+
+# Concept draft
+![EmbodiedAgent](https://user-images.githubusercontent.com/57088396/222088665-946a89ac-7808-4f6d-931a-fc04d8f032b2.png)
+
